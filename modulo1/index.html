@@ -1,0 +1,78 @@
+<html> 
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <script>
+            //exercício 1
+            var endereco = {                
+                rua: "Rua dos pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf:"SP"                    
+            }
+            function retornaDescricaoEndereco (endereco)
+            {
+                var resultado = "O usuário mora em " + endereco.cidade + ' /' 
+                resultado +=  endereco.uf + ', ';
+                resultado += "no bairro " + endereco.bairro + ", ";
+                resultado += 'na rua ' + endereco.rua + ' ';
+                resultado += "com n° " + endereco.numero + '.';
+                return resultado;
+            }
+            var resultadoEx1 = retornaDescricaoEndereco(endereco);
+            console.log(resultadoEx1);
+            //exercício 2
+            function pares(x, y) {
+                var resultado = [], i = 0;
+                for (x; x <= y; x++)
+                {
+                    if (x % 2 == 0) {
+                        resultado[i] = x;
+                        i++; 
+                    }
+                }
+                return resultado;
+            }
+            var resultadoEx2 = pares(32,321);
+            for (var i = 0; i <= resultadoEx2.length - 1; i++){
+                console.log(resultadoEx2[i]);
+            }
+            // exercício 3            
+            function temHabilidades(skills)
+            {
+                var resultado = false;
+                for (var i = 0; i <= skills.length; i++){
+                    resultado ||= skills[i] === "Javascript";                        
+                }
+                return resultado;
+            }
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            var resultadoEx3 = temHabilidades(skills);
+            console.log(resultadoEx3);
+            // exercício 4
+            function experiencia(anos){
+                
+                return anos >= 7 ? "Jedi Master" : anos <= 6 && anos > 3 ? "Avançado" : anos <= 3 && anos > 1 ? "Intermediario" : "Iniciante";
+            }
+            var resultadoEx4 = experiencia(1);
+            console.log(resultadoEx4);
+            //exercício 5
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Exilir"]
+                }
+            ]
+            for (var usuario of usuarios) {
+                var resultadoEx5 = "O " + usuario.nome + "possui as seguintes habilidades: "  + usuario.habilidades.join([separador = ","]);
+                console.log(resultadoEx5);
+            }
+        </script>
+    </body>
+</html>
